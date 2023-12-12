@@ -1,0 +1,103 @@
+<view class='order'>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>所在地区</text>
+    </view>
+    <view class='stxt-r'>
+      <picker mode="multiSelector" bindchange="pcChange" value="pcIndex" range-key='name' range="{{pcList}}" bindcolumnchange="pcColumnChange">
+        <view class="picker">
+          {{currentProvinceName && currentCityName ?currentProvinceName+' '+currentCityName:"请选择地区"}}
+
+        </view>
+      </picker>
+      <view class='icon-right'></view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>装修类型</text>
+    </view>
+    <view class='stxt-r'>
+      <picker mode="selector" bindchange="typeChange" value="typeIndex" range-key='name' range="{{typeList}}">
+        <view class="picker">
+          {{typeIndex==-1?"请选择装修类型":typeList[typeIndex].name}}
+        </view>
+      </picker>
+      <view class='icon-right'></view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>装修面积</text>
+    </view>
+    <view class='stxt-r'>
+      <input type="number" bindinput='areaInput' placeholder="单位" value="{{area}}" class='text' maxlength='4' />㎡</view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>装修预算</text>
+    </view>
+    <view class='stxt-r'>
+      <input type="number" placeholder="单位：万元" value="{{decoration_budget}}" bindinput="decorationInput" class='text' maxlength='4' />
+      <view wx:if="{{decoration_budget_input}}">万元</view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>设计费预算</text>
+    </view>
+    <view class='stxt-r'>
+      <picker mode="selector" bindchange="budgetChange" value="budgetIndex" range-key='name' range="{{budgetList}}">
+        <view class="picker">
+          {{budgetIndex==-1?"请选择设计费预算":budgetList[budgetIndex].name}}
+        </view>
+      </picker>
+      <view class='icon-right'></view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>要求/说明（限500字）</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class="textarea-wrp">
+      <textarea bindinput="descInput" placeholder="请填写您对接单设计师的要求，或您对装修效果的预期等说明，我们将帮您找到最符合您要求的设计团队。" style="height: 4em;" maxlength='500' placeholder-style="color: #cacaca" />
+    </view>
+  </view>
+
+</view>
+
+<view class='order mt20'>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>联系人</text>
+    </view>
+    <view class='stxt-r'>
+      <input bindinput="nameInput" placeholder="请输入姓名" value="{{name}}" class='text' maxlength='5' />
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text class='red'>*</text>
+      <text>手机号</text>
+    </view>
+    <view class='stxt-r'>
+      <input bindinput="phoneInput" placeholder="请输入手机号" class='text' type='number' maxlength='11' />
+    </view>
+  </view>
+
+
+</view>
+<view class='order-btn'>
+  <button class="button-red button-block" bindtap='releaseConfirm' type=''>确认发布</button>
+</view>
+<text class='text4'>声明：
+建E网接单小程序仅根据您的要求推荐合适设计师，我们不会以任何名义索要您的银行账户信息，更不会泄露您的手机号。如有设计师申请接单，并审核通过，设计师将联系您！</text>

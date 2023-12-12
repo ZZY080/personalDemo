@@ -1,0 +1,21 @@
+body{padding: 0; margin: 0;}
+.popup_main{width: 200px; box-sizing: border-box; padding: 10px;}
+.popup_main .popup_item{height: auto; overflow: hidden;}
+.popup_main .popup_item .item{display: flex; line-height: 35px; align-items: center; cursor: pointer;}
+.popup_main .popup_item .item .icon{width: 30px;}
+.popup_main .popup_item .item .icon i{font-size: 20px;color: #333;}
+.popup_main .popup_item .item .popup_text{flex: 1;}
+.popup_main .popup_item_xian{border-bottom: 1px solid #f5f5f5;}
+
+.popup_config{width: 400px; height: auto; overflow: hidden;box-sizing: border-box;display: none;}
+.popup_config .popup_config_title{ height: 45px; border-bottom: 1px solid #f5f5f5; position: relative;text-align: center;line-height: 45px;
+font-size:18px;}
+.popup_config .popup_config_title .host{ position: absolute; left: 10px; top:0; cursor: pointer;}
+.popup_config .config_item{height: auto; overflow: hidden; box-sizing: border-box;padding: 20px 20px;}
+.popup_config .config_item .item_input{height: auto; overflow: hidden;display: flex;}
+.popup_config .config_item .item_input .config_bt{font-size: 14px;color: #333;margin-bottom:10px;}
+.popup_config .config_item .item_input .input_radio{flex: 1;}
+.popup_config .config_item .item_input .input_radio .range{display: flex; align-items: center;}
+.popup_config .config_item .item_input .input_radio .outputText{font-size: 16px;}
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="picture" alt="">
+    <script src="./js/jquery/jquery.js"></script>
+    <script src="./js/jquery/jquery.facedetection.min.js"></script>
+    <script>
+        $("#picture").faceDetection({
+            complete:function(faces){
+                console.log(faces)
+            }
+        })
+    </script>
+</body>
+</html>

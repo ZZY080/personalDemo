@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+         grid-template-areas: 'a a b'
+                                 'e f f'
+                                 'e f f';
+        相当于拿着下面的区域来填充
+        
+        */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        #box {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid black;
+            display: grid;
+            grid-template-areas: 'a a b'
+                                 'e f f'
+                                 'e f f';
+        }
+        .one {
+            grid-area:a;
+            background-color: blanchedalmond;
+        }
+        .two{
+            grid-area:b;
+            background-color: cadetblue;
+        }
+        /* .three{
+            grid-area:c;
+            background-color: chartreuse;
+        } */
+        .four{
+            grid-area:d;
+            background-color: coral;
+        }
+        .five{
+            grid-area: e;
+            background-color: cornflowerblue;
+        }
+        .six{
+            grid-area: f;
+            background-color: cyan;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div id="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <!-- <div class="three">3</div> -->
+        <!-- <div class="four">4</div> -->
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div> 
+</body>
+ 
+</html>

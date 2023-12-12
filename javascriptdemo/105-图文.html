@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.5.0/axios.js"></script>
+    <script>
+        // 发送 GET 请求
+        let user_input = `
+对知识没有敬畏感，认为知识没什么用，如果赚不到钱，就归结为命不好，也不参与到孩子的教育中，从小就丢给爷爷奶奶带，不清楚幼儿时期的成长环境对孩子的影响是巨大的。
+
+。
+
+。
+
+。`;
+        axios.get(`http://192.168.1.139:8000/gpt4image?user_input=${user_input}`)
+            .then(function (response) {
+                // 处理成功响应的数据
+                console.log('GET 请求的响应数据：', response.data);
+                let root = document.documentElement;
+                root.innerHTML=`<img src='data:image/png;base64,${response.data.content}' width='200' height='200'>`;
+            })
+            .catch(function (error) {
+                // 处理错误
+                console.error('发生错误：', error);
+            });
+
+    </script>
+</body>
+
+</html>

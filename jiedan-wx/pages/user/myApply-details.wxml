@@ -1,0 +1,113 @@
+<view class='order'>
+  <view class='list'>
+    <view class='stxt'>
+      <text>所在地区</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.province_name}} {{details.city_name}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修类型</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.decoration_type}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修面积</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.area}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修预算</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.decoration_budget}}</text>
+    </view>
+  </view>
+  <view class='list' bindtap="openActionsheet2">
+    <view class='stxt'>
+      <text>设计费预算</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.design_budget}}</text>
+    </view>
+  </view>
+  <view class='list list-dsc'>
+    <view class='stxt'>
+      <text>要求/说明</text>
+    </view>
+  </view>
+  <view class='list list-desc'>
+    <text>{{details.desc}}</text>
+  </view>
+
+</view>
+
+<view class='order mt20'>
+  <view class='list'>
+    <view class='stxt'>
+      <text>联系人</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.contactor}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>手机号</text>
+    </view>
+    <view class='stxt-r'>
+      <text wx:if="{{details.phone==0}}">申请接单通过后可见</text>
+      <text wx:else bindtap='makeCall'>{{details.phone}}</text>
+    </view>
+  </view>
+
+</view>
+<view class='order mt20'>
+
+  <view class='list'>
+    <view class='stxt'>
+      <text>发布时间</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.publish_at}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>申请时间</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.take_at}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>审核时间</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{details.approvetime}}</text>
+    </view>
+  </view>
+  <view class='list list-desc' wx:if="{{details.status==2}}">
+    <view class='stxt'>
+      <text>未通过原因：</text>
+    </view>
+  </view>
+  <view class='list list-desc' wx:if="{{details.status==2}}">
+    <view class='stxt-r'>
+      <text>{{details.approvemsg}}</text>
+    </view>
+  </view>
+
+</view>
+
+<view wx:if="{{details.status==1}}" class='icon-result icon-ytb-b'></view>
+<view wx:if="{{details.status==2}}" class='icon-result icon-wtg-b'></view>

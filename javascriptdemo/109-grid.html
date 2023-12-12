@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        grid-template-rows
+         grid-template-columns
+        属性值：200px 200px 200px;相当于repeat(3,200px);
+
+               100px auto 100px;(auto部分系统自动补齐)
+
+                1fr  2fr  3fr(将行/列按照fr比例划分，总共划分六部分，按比例占用)
+
+                repeat(4,1fr);平分成四等分
+
+                20% 30% 50%；(按百分比划分)
+
+                repeat(auto-fill,30%);将按30%划分，盛放不下的则不划
+
+                100px minmax(min,max);条件允许用最大值，最小不能超过最小值  
+        */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .wrapper {
+            margin: 0px;
+            /* 声明一个容器 */
+            display: grid;
+            /* 分别代表 第一行 第二行的高度 有两个数代表有两行 */
+            grid-template-rows: 100px 200px;
+            /* 分别代表 第一列 第二列 第三列 的宽度 有三个数代表有三列 */
+            grid-template-columns:200px 200px 200px;
+            /* 行间隙 */
+            grid-row-gap: 20px;
+            /* 列间隙 */
+            grid-column-gap: 10px;
+            /* 分别代表行间隙 列间隙  为复合属性*/
+            grid-gap: 20px 10px;
+            /* 子项主轴对齐方式 */
+            justify-content: center;
+            /* 侧轴子项对齐方式 */
+            align-content: center;
+        }
+        .one{
+            background-color:#b8e8e0 ;
+        }
+        .two{
+            background-color: #8CC7B5;
+        }
+        .three{
+            background-color:#efe3bf ;
+        }
+        .four{
+            background-color: #BEE7E9;
+        }
+        .five{
+            background-color: #E6CEAC;
+        }
+        .six{
+            background-color: #ECAD9E;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="one item">one</div>
+        <div class="two item">two</div>
+        <div class="three item">three</div>
+        <div class="four item">four</div>
+        <div class="five item">five</div>
+        <div class="six item">six</div>
+    </div>
+</body>
+</html>

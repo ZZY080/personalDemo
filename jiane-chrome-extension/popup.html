@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/custom.css"/>
+		<link rel="stylesheet" href="css/iconfont.css"/>
+	</head>
+	<body>
+		<div class="popup_main" id="popup_main">	
+			<div class="popup_item popup_item_xian">
+				<div class="item" id="save-images">
+					<div class="icon"><i class="iconfont icon-xiazai"></i></div>
+					<div class="popup_text">批量收藏</div>
+				</div>
+			</div>
+			<div class="popup_item">
+				<div class="item" id="config">
+					<div class="icon"><i class="iconfont icon-shezhi"></i></div>
+					<div class="popup_text">偏好设置</div>
+				</div>
+			</div>
+			<div class="popup_item">
+				<div class="item" id="loginOut" style="display: none;">
+					<div class="icon"><i class="iconfont icon-tuichu"></i></div>
+					<div class="popup_text">退出登录</div>
+				</div>
+			</div>
+		</div>
+		<div class="popup_config" id="popup_config">
+			<div class="popup_config_title">
+				<div class="host" id="host"><i class="iconfont icon-fanhui"></i></div>
+				偏好设置
+			</div>
+			<div class="config_item">
+				<div class="item_input">
+					<div class="config_bt">采集按钮：</div>
+					<div class="input_radio">
+						<label>
+							<input type="radio" name="collectionStatus" value="1" id="toggle_yes_button">显示
+						</label>
+						<label>
+							<input type="radio" name="collectionStatus" value="2" id="toggle_no_button">不显示
+						</label>
+					</div>
+				</div>
+				
+				<div class="item_input">
+					<div class="config_bt">最小宽度：</div>
+					<div class="input_radio input_range">
+						<div class="range">
+							<input type="range" min="10" max="1000" step="10" value="200" id="rangeInput" data-rangeslider="" class="range" >
+							<output id="outputText" class="outputText">200px</output>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-3.0.0.min.js"></script>
+	<script src="js/popup.js" type="text/javascript" charset="utf-8"></script>
+</html>

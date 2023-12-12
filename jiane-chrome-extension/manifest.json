@@ -1,0 +1,46 @@
+{
+	"manifest_version":2,
+	"name":"青象云采集器" ,
+	"version":"1.0" ,
+	"description":"这个扩展程序可以让你方便地从任意网站上采集喜欢的图片到青象云(qx.justeasy.cn)上。这是青象云官方(qx.justeasy.cn)提供的扩展。",
+	"icons":{ 
+		"16":"img/logo_16.png",
+		"128":"img/logo_128.png"	
+	},
+	"browser_action": {
+	  "default_icon": {
+	    "19": "img/logo_19.png",
+	    "38": "img/logo_38.png"
+	  },
+	  "default_title": "青象云页收藏工具",
+	  "default_popup": "popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"js": ["js/jquery-3.0.0.min.js","js/jQuery.md5.js", "js/scriptHtml.js"],
+			"css": ["css/custom.css"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"css": ["css/iconfont.css"],
+			"run_at": "document_start"
+		}
+	],
+	"content_security_policy":"script-src 'self' https://qx.justeasy.cn https://ssl.google-analytics.com; object-src 'self'",
+	"background": {
+		"page": "background.html"
+	},
+	"permissions": [
+	  "*://*/*",
+	  "contextMenus",
+	  "notifications",
+	  "cookies",
+	  "storage",
+	  "activeTab",
+	  "<all_urls>",
+	  "tabs"
+	]
+}

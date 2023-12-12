@@ -1,0 +1,30 @@
+/* pages/user/myApply-details.wxss */
+
+.icon-result {
+  position: absolute;
+  top: 100rpx;
+  right: 170rpx;
+  width: 204rpx;
+  height: 154rpx;
+  background-size: 100% !important;
+}
+
+.icon-ytb-b {
+  background: url(http://res1.justeasy.cn/images/wsxcx/icon-ytg-b.png) center no-repeat;
+}
+
+.icon-wtg-b {
+  background: url(http://res1.justeasy.cn/images/wsxcx/icon-wtg-b.png) center no-repeat;
+}
+
+.list.list-desc {
+  border-bottom: none;
+}
+
+.list.list-desc {
+  padding: 30rpx 0px;
+}
+
+.list.list-desc:last-child {
+  padding: 0rpx 0rpx 30rpx 0rpx;
+}

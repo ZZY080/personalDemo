@@ -1,0 +1,39 @@
+<view class='pad30'>
+  <view class="applt-top shodow">
+    <view class='{{currentType==0?"active":""}} list' bindtap='applyTap' data-type='0'>
+      <view>全部</view>
+    </view>
+    <view class='{{currentType==1?"active":""}} list' bindtap='applyTap' data-type='1'>
+      <view>已通过</view>
+      <view wx:if="{{hasPass!=0}}" class='num'>{{hasPass}}</view>
+    </view>
+    <view class='{{currentType==2?"active":""}} list' bindtap='applyTap' data-type='2'>
+      <view>未通过</view>
+      <view wx:if="{{notPass!=0}}" class='num'>{{notPass}}</view>
+    </view>
+  </view>
+
+  <view class='order-list'>
+    <view bindtap="applyListTap" data-id="{{item.id}}" class='list shodow' wx:for="{{applyList}}" wx:key="{{}}">
+      <view class='name'>{{item.contactor}}</view>
+      <view class='org'>{{item.status}}</view>
+      <view class='info'>
+        <view>精选类型：{{item.decoration_type}}</view>
+        <view>装修面积：{{item.area}}</view>
+        <view>装修预算：{{item.decoration_budget}}</view>
+        <view>设计费预算：{{item.design_budget}}</view>
+      </view>
+      <view class='stxt'>
+        {{item.desc}}
+      </view>
+      <view class='list-bottom'>
+        <view class='address'>{{item.province_name}} · {{item.city_name}}</view>
+        <view>{{item.addtime}}</view>
+      </view>
+    </view>
+    <view wx:if="{{applyList.length<=0 && !firstLaunch}}" class='no-data'>
+      暂无数据
+    </view>
+  </view>
+
+</view>

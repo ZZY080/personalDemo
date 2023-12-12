@@ -1,0 +1,87 @@
+<!--pages/send/index.wxml-->
+<view class='order'>
+  <view class='list'>
+    <view class='stxt'>
+      <text>所在地区</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.province_name}} {{orderInfo.city_name}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修类型</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.decoration_type}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修面积</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.area}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>装修预算</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.decoration_budget}}</text>
+    </view>
+  </view>
+  <view class='list' bindtap="openActionsheet2">
+    <view class='stxt'>
+      <text>设计费预算</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.design_budget}}</text>
+    </view>
+  </view>
+  <view class='list list-dsc'>
+    <view class='stxt'>
+      <text>要求/说明</text>
+    </view>
+  </view>
+  <view class='list list-desc'>
+    <text>{{orderInfo.desc}}</text>
+  </view>
+
+</view>
+
+<view class='order mt20'>
+  <view class='list'>
+    <view class='stxt'>
+      <text>联系人</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.contactor}}</text>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='stxt'>
+      <text>手机号</text>
+    </view>
+    <view class='stxt-r'>
+      <text>申请接单通过后可见</text>
+    </view>
+  </view>
+
+</view>
+<view class='order mt20'>
+  <view class='list'>
+    <view class='stxt'>
+      <text>发布时间</text>
+    </view>
+    <view class='stxt-r'>
+      <text>{{orderInfo.addtime}}</text>
+    </view>
+  </view>
+
+</view>
+<view class='order-btn'>
+  <button wx:if="{{!isTake}}" data-rid="{{orderInfo.id}}" bindtap='requestTake' class="button-red button-block none" type=''>申请接单</button>
+  <button wx:else class="button-default1 button-block" type=''>已申请</button>
+</view>

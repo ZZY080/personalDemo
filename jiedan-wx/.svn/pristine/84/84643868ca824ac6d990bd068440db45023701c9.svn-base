@@ -1,0 +1,80 @@
+<view class="user-head">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatar || 'http://res1.justeasy.cn/images/defaulthead.jpg'}}"
+      background-size="cover"></image>
+    <view class='user-details'>
+      <text class="userinfo-nickname">{{userInfo.nickname?userInfo.nickname:'未登录'}}</text>
+      <view wx:if="{{userInfo.approve==0}}" class='icon-wrz'></view>
+      <view wx:elif="{{userInfo.approve>0}}" class='icon-rz'></view>
+    </view>
+  </view>
+</view>
+<view class='user-main'>
+  <view class='a-link' bindtap='viewMyApply' data-type="0">
+    <!-- <navigator url='' hover-class="navigator-hover">我的接单申请</navigator> -->
+    <view class="nav_warp">我的接单申请</view>
+  </view>
+  <view class='user-nav'>
+    <view class='user-nav-a' bindtap='viewMyApply' data-type="0">
+      <view>
+        <image src="http://res1.justeasy.cn/images/wsxcx/icon-all.png"></image>
+        <text>全部</text>
+      </view>
+    </view>
+    <view class='user-nav-a' bindtap='viewMyApply' data-type="1">
+      <view>
+        <image src="http://res1.justeasy.cn/images/wsxcx/icon-ytg.png"></image>
+        <text>已通过</text>
+        <view wx:if="{{hasPass!=0}}" class='num'>{{hasPass}}</view>
+      </view>
+    </view>
+    <view class='user-nav-a' bindtap='viewMyApply' data-type="2">
+      <view>
+        <image src="http://res1.justeasy.cn/images/wsxcx/icon-wtg.png"></image>
+        <text>未通过</text>
+        <view wx:if="{{notPass!=0}}" class='num'>{{notPass}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{userInfo.approve == 0}}" class='a-link mt20'>
+  <!-- <navigator bindtap="goAuth" data-statu="open" url="" hover-class="navigator-hover">
+    <view>我的认证信息</view>
+    <view class='org'>去认证</view>
+  </navigator> -->
+  <view class="nav_warp" bindtap="goAuth" data-statu="open">
+    <view>我的认证信息</view>
+    <view class='org'>去认证</view>
+  </view>
+</view>
+
+<view class="drawer_screen" bindtap="goAuth" data-statu="close1" wx:if="{{authModalStatus}}">
+</view>
+<view animation="{{animationAuthData}}" class="drawer_box" wx:if="{{authModalStatus}}">
+  <view class="drawer_top">
+    <view class='auth_step'>认证步骤</view>
+  </view>
+  <view class="drawer_title">
+    <view>1、请在应用商店中搜索【设计头条】并完成下载安装；</view>
+    <view>2、在【设计头条】中完成设计师认证；</view>
+    <view>3、认证成功之后在【设计头条】中绑定微信账号，通过该微信账号登陆接单小程序即可。</view>
+  </view>
+  <view class="drawer_content">
+    认证后才可以申请接单哦~
+  </view>
+  <view class="drawer_button">
+    <button bindtap="goAuth" data-statu="close" class='btn-login'>确 定</button>
+  </view>
+</view>
+
+<view class="drawer_screen" wx:if="{{loginModalStatus}}"></view>
+<view animation="{{animationLoginData}}" class="drawer_box1" wx:if="{{loginModalStatus}}">
+  <view class="drawer_title">
+    本功能暂时仅对设计师开放，如果您是设计师，请点击登录
+  </view>
+  <view class="drawer_button">
+    <button open-type='getUserInfo' bindgetuserinfo='loginAfterRefuse' bindtap='dealLogin'
+      class='btn-login'>去登录</button>
+  </view>
+</view>

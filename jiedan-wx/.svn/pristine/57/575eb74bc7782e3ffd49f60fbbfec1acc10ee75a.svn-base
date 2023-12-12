@@ -1,0 +1,226 @@
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0rpx;
+  left: 0;
+  width: 100%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  margin: 20rpx auto;
+  border: 8rpx solid rgba(255, 255, 255, 0.3);
+}
+
+.userinfo-nickname {
+  color: #333;
+}
+
+.user-head {
+  width: 100%;
+  background: #fe7200;
+  padding-bottom: 20rpx;
+  position: relative;
+  height: 80rpx;
+}
+
+.icon-rz {
+  width: 93rpx;
+  height: 30rpx;
+  background: url(http://res1.justeasy.cn/images/wsxcx/icon-rz.png) no-repeat;
+  background-size: 93rpx;
+  margin-left: 20rpx;
+  margin-top: 4rpx;
+}
+
+.icon-wrz {
+  width: 93rpx;
+  height: 30rpx;
+  background: url(http://res1.justeasy.cn/images/wsxcx/icon-wrz.png) no-repeat;
+  background-size: 93rpx;
+  margin-left: 20rpx;
+  margin-top: 4rpx;
+}
+
+.user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-main {
+  width: 100%;
+  background: #fff;
+  padding-top: 180rpx;
+}
+
+.a-link {
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 0;
+}
+
+.a-link .nav_warp {
+  font-size: 30rpx;
+  background: url(http://res1.justeasy.cn/images/wsxcx/icon-right.png) 95% center no-repeat;
+  background-size: 14rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-nav {
+  width: 100%;
+  border-top: 1px solid #e8e8e8;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-nav-a image {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.user-nav-a text {
+  font-size: 24rpx;
+  display: block;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.mt20 {
+  margin-top: 20rpx;
+}
+
+.org {
+  color: #ff6619;
+}
+
+.a-link .nav_warp .org {
+  margin-right: 8%;
+}
+
+.user-nav-a {
+  position: relative;
+}
+
+.user-nav-a .num {
+  position: absolute;
+  right: 0;
+  top: -6rpx;
+  height: 34rpx;
+  min-width: 34rpx;
+  background: #ff6619;
+  color: #fff;
+  font-size: 24rpx;
+  display: block;
+  line-height: 34rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/*SHOWMODAL*/
+
+/*mask*/
+
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: black;
+  opacity: 0.5;
+  overflow: hidden;
+}
+
+/*content*/
+
+.drawer_box {
+  width: 630rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 55%;
+  left: 0;
+  z-index: 1011;
+  background: #fff;
+  /* margin: -150px 30rpx 50rpx 35rpx; */
+  margin-top: -452rpx;
+  margin-left: 60rpx;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.drawer_box1 {
+  width: 600rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 55%;
+  left: 0;
+  z-index: 1011;
+  background: #fff;
+  margin: -150px 50rpx 50rpx 70rpx;
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.drawer_top {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+.drawer_title {
+  padding: 20px 15px;
+  font-size: 17px;
+  text-align: left;
+  color: black;
+  line-height: 75rpx;
+}
+
+.drawer_content {
+  padding: 5rpx 5rpx 20rpx 5rpx;
+  font-size: 14px;
+  height: 20px;
+  color: #ccc;
+  text-align: center;
+}
+
+.drawer_button {
+  border-top: 1px solid #ccc;
+}
+
+.drawer_button view {
+  display: inline-block;
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.drawer_button .btn-cancel {
+  color: black;
+  width: 49%;
+  border-right: 1px solid #ccc;
+}
+
+.drawer_button .btn-confirm {
+  width: 49%;
+  color: #ff6619;
+}
+
+.drawer_button .btn-login {
+  text-align: center;
+  color: #ff6619;
+  background: #fff;
+}
+
+.drawer_button .btn-login::after {
+  border: none;
+}

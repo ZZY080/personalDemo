@@ -1,0 +1,64 @@
+<view class='banner'>
+  <navigator style='width: 100%; height:265rpx; background: url({{banner}}) left top no-repeat; background-size: 100%' url='/pages/send/index'></navigator>
+</view>
+<view class='pad30'>
+  <view class='select shodow'>
+
+    <view class='item' bindtap="taborder">
+      <view>排序</view>
+      <view class='icon icon-down'></view>
+      <view wx:if="{{showorder}}" class="showbox">
+        <view class='s-bg' style="width:{{view.Width}}px;height:{{view.Height}}px;"></view>
+        <view class='s-item' style="width:{{view.Width}}px;">
+          <view bindtap='orderTap0' class='s-list {{order==0?"active":""}}'>发布时间</view>
+          <view bindtap='orderTap10' class='s-list {{order==10 || order==11?"active":""}}'>装修预算
+            <view class='icon {{order==11?"icon-todown":"icon-toup"}}'></view>
+          </view>
+          <view bindtap='orderTap20' class='s-list {{order==20 || order==21?"active":""}}'>装修面积
+            <view class='icon {{order==21?"icon-todown":"icon-toup"}}'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class='item' bindtap="tabtype">
+      <view>类型</view>
+      <view class='icon icon-down'></view>
+      <view wx:if="{{showtype}}" class="showbox">
+        <view class='s-bg' style="width:{{view.Width}}px;height:{{view.Height}}px;"></view>
+        <view class='s-item' style="width:{{view.Width}}px;">
+          <view wx:for="{{typeList}}" wx:key="{{}}" bindtap='orderTypeTap' data-type="{{index}}" class='s-list {{order_type==index?"active":""}}'>{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='order-list'>
+    <view class='list shodow' wx:for="{{requirementsList}}" wx:key="{{}}" bindtap='goDetail' data-id="{{item.id}}">
+      <view class='name'>{{item.contactor}}</view>
+      <view class='info'>
+        <view>精选类型：{{item.decoration_type}}</view>
+        <view>装修面积：{{item.area}}</view>
+        <view>装修预算：{{item.decoration_budget}}</view>
+        <view>设计费预算：{{item.design_budget}}</view>
+      </view>
+      <view class='stxt'>
+        {{item.desc}}
+      </view>
+      <view class='list-bottom'>
+        <view class='address'>{{item.province_name}} · {{item.city_name}}</view>
+        <view>{{item.addtime}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{requirementsList.length <= 0 && !firstLaunch}}" class='no-data'>
+    暂无数据
+  </view>
+
+</view>
+
+
+<view class='gotop' bindtap="goTop" wx:if="{{ floorstatus }}"></view>
+<!-- <view class='fixed-send'>
+  <navigator class='icon-send'></navigator>
+</view> -->
