@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>扫码示例</title>
+  <style>
+    video {
+        border-radius: 20px;
+        border: 1px solid rgba(0,0,0,0.09);
+    }
+  </style>
+</head>
+<body>
+  <h1>扫码示例</h1>
+  <video id="video" width="300" height="200"></video>
+  <button onclick="startScan()">开始扫码</button>
+
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <script>
+    const videoElem = document.getElementById('video');
+    let scanner = null;
+
+    async function startScan() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoElem.srcObject = stream;
+
+        scanner = new Instascan.Scanner({ video: videoElem });
+        scanner.addListener('scan', function(content) {
+          alert('扫描结果：' + content);
+          stopScan();
+        });
+
+        Instascan.Camera.getCameras().then(cameras => {
+          if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+          } else {
+            alert('没有找到摄像头！');
+          }
+        }).catch(err => {
+          console.error(err);
+          alert('无法获取摄像头信息：' + err);
+        });
+      } catch (err) {
+        console.error(err);
+        alert('无法访问摄像头：' + err);
+      }
+    }
+
+    function stopScan() {
+      if (scanner) {
+        scanner.stop();
+      }
+    }
+  </script>
+</body>
+</html>
