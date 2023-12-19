@@ -7,6 +7,56 @@
         border-radius: 20px;
         border: 1px solid rgba(0,0,0,0.09);
     }
+    #video {
+      border: 2px solid #ff0000;
+      position: relative;
+      width: 300px;
+      height: 200px;
+    }
+
+    #video::before,
+    #video::after,
+    #video::before2,
+    #video::after2 {
+      content: '';
+      position: absolute;
+      border: 2px solid #ff0000;
+      animation: borderAnimation 2s linear infinite;
+    }
+
+    /* 定义边框动画 */
+    @keyframes borderAnimation {
+      0% {
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+      }
+      25% {
+        top: -2px;
+        left: -2px;
+        width: 100%;
+        height: 0;
+      }
+      50% {
+        top: -2px;
+        left: 100%;
+        width: 0;
+        height: 100%;
+      }
+      75% {
+        top: 100%;
+        left: 100%;
+        width: 0;
+        height: 0;
+      }
+      100% {
+        top: -2px;
+        left: -2px;
+        width: 0;
+        height: 0;
+      }
+    }
   </style>
 </head>
 <body>
